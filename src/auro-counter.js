@@ -23,12 +23,11 @@ import styleCssFixed from './style-fixed-css.js';
  * @attr {Boolean} fixed - Uses fixed pixel values for element shape
  * @attr {String} cssClass - Applies designated CSS class to demo element - you want to delete me!
  */
-
-// build the component class
 class AuroCounter extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+    this.count = 0;
+  }
 
   // This function is to define props used within the scope of this component
   // Be sure to review  https://lit-element.polymer-project.org/guide/properties#reflected-attributes
@@ -36,9 +35,10 @@ class AuroCounter extends LitElement {
   static get properties() {
     return {
       // ...super.properties,
-
-      // this property is DEMO ONLY! Please delete.
-      cssClass:   { type: String }
+      count: {
+        type: Number,
+        reflect: true
+      }
     };
   }
 
@@ -49,16 +49,24 @@ class AuroCounter extends LitElement {
     ];
   }
 
+  increment() {
+    this.count++;
+  }
+
+  decrement() {
+    this.count--;
+  }
+
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
   // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-
-      <!-- this is demo code, DO NOT USE IN YOUR ELEMENT -->
-      <div class=${this.cssClass} tabindex="0">
-        <slot></slot>
+      <div>
+        <button @click=${this.decrement}>-</button>
+        <span>${this.count}</span>
+        <button @click=${this.increment}>+</button>
       </div>
     `;
   }
