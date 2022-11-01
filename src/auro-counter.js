@@ -50,11 +50,11 @@ class AuroCounter extends LitElement {
   }
 
   increment() {
-    this.count++;
+    this.count += 1;
   }
 
   decrement() {
-    this.count--;
+    this.count -= 1;
   }
 
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
