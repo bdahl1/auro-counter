@@ -14,6 +14,6 @@ This is some docs blah blah blah
   <span slot="trigger">See code</span>
 
 ```html
-I AM COPY PASTED YO
+<auro-counter></auro-counter>
 ```
 </auro-accordion>

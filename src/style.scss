@@ -18,16 +18,16 @@
 //   ...
 // }
 
-
 // Selector is for initial setup only
 // delete when building new custom element
 .testClass {
   display: inline-block;
   padding: var(--auro-text-body-size-default);
   border: 1px solid var(--auro-color-border-error-on-light);
-  color:  var(--auro-color-border-error-on-light);
+  color: var(--auro-color-border-error-on-light);
 }
 
+/*
 // Selector for native :focus-visible support
 :focus-visible {
   background-color: var(--auro-color-border-error-on-light);
@@ -40,5 +40,36 @@
   .testClass {
     background-color: var(--auro-color-border-error-on-light);
     color: var(--auro-color-base-white);
+  }
+}
+*/
+
+.count {
+  display: inline-block;
+  width: 1em;
+  text-align: center;
+}
+
+.incrementbtn {
+  border: 1px solid var(--auro-color-ui-default-on-light);
+  border-radius: var(--auro-border-radius);
+  background-color: var(--auro-color-ui-default-on-light);
+  color: var(--auro-color-text-primary-on-dark);
+  cursor: pointer;
+
+  // handle hover state auro-button
+  @media (hover: hover) {
+    &:active,
+    &:hover {
+      border: 1px solid var(--auro-color-ui-hover-on-light);
+      background-color: var(--auro-color-ui-hover-on-light);
+    }
+  }
+
+  // handle active state
+  &:active {
+    border: 1px solid var(--auro-color-ui-active-on-light);
+    background-color: var(--auro-color-ui-active-on-light);
+    transform: scale(.95);
   }
 }

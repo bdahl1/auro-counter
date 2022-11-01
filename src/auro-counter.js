@@ -18,7 +18,7 @@ import styleCssFixed from './style-fixed-css.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-counter element provides users a way to ... (it would be great if you fill this out).
+ * The auro-counter provides a way to track a .
  *
  * @attr {Boolean} fixed - Uses fixed pixel values for element shape
  * @attr {String} cssClass - Applies designated CSS class to demo element - you want to delete me!
@@ -60,13 +60,12 @@ class AuroCounter extends LitElement {
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
   // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
-  // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
       <div>
-        <button @click=${this.decrement}>-</button>
-        <span>${this.count}</span>
-        <button @click=${this.increment}>+</button>
+        <button class="incrementbtn" @click=${this.decrement}>-</button>
+        <span class="count">${this.count}</span>
+        <button class="incrementbtn" @click=${this.increment}>+</button>
       </div>
     `;
   }
